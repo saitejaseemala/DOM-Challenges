@@ -1,0 +1,20 @@
+.fa-star-o:before {
+    content: "\f006";
+    color: #5f6368;
+}
+
+.fa-star:before {
+    content: "\f005";
+    color: #d56e0c;
+}
+
+#star{
+    text-align: center;
+    margin-top: 25%;
+    font-size: 40px;
+}
+
+#display-star{
+    text-align: center;
+    font-size: 30px;
+}
