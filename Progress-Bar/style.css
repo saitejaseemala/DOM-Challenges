@@ -1,0 +1,25 @@
+
+#progress-bar {
+  width: 40%;
+  height: 30px;
+  background-color: rgb(216, 209, 209);
+}
+
+button{
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+}
+
+.start {
+    background: linear-gradient(to right, rgb(25, 97, 192) 50%, transparent 0);
+    background-size: 200% 100%;
+    background-position: right;
+    animation: makeItfadeIn 3s forwards;
+  }
+  
+  @keyframes makeItfadeIn {
+    100% {
+      background-position: left;
+    }
+  }
