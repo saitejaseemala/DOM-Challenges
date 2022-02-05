@@ -1,0 +1,44 @@
+.shake {
+    animation: shake 0.8s infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+    0% {transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-8px);}
+    20%, 40%, 60%, 80%,100% {transform: translateX(8px);}
+ }
+
+ body{
+     overflow: auto;
+ }
+
+ h1{
+     text-align: center;
+ }
+
+ #score{
+     text-align: center;
+     font-size: 20px;
+     font-weight: 500;
+     margin-bottom: 10px;
+ }
+
+ #color-spotter{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     
+ }
+
+ .cell{
+    width: 30px;
+    height: 30px;
+    background-color: burlywood;
+    border: 2px solid black;
+ }
+
+ .row{
+     display: flex;
+ }
