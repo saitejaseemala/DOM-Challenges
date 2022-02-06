@@ -1,6 +1,6 @@
 ### Challenge 5: Progress Bar
 
-#link: https://frosty-hopper-8d4ad1.netlify.app/
+Solution Live URL: https://frosty-hopper-8d4ad1.netlify.app/
 
 Create a progress bar using HTML, CSS and Vanilla Javascript.
 
