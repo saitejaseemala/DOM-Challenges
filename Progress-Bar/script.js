@@ -23,6 +23,7 @@ function callFromHtml() {
           clearInterval(timer);
           timer = undefined;
           btn.innerHTML = "Run";
+          bar.classList.remove("start");
         } else {
           startBar();
         }
