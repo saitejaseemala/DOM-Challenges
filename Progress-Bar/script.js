@@ -6,21 +6,34 @@ function callFromHtml() {
   const body = document.querySelector("body");
   body.appendChild(btn);
   btn.addEventListener("click", onClickHandler);
-  var count = 0;
+  var clickCount = 0;
+  var timer = 0;
   function onClickHandler() {
-    count++;
-    if(count!=1){
-      setTimeout(reset,3000*count)
+    clickCount++;
+    btn.innerHTML = "Run " + clickCount;
+    if (!timer) {
+      startBar();
+      hehe();
     }
-    else{
-      reset();
-    }
-  }
 
-  function reset() {
-    bar.classList.remove("start");
-    setTimeout(() => {
-      bar.classList.add("start");
-    }, 0);
+    function hehe() {
+      timer = setInterval(() => {
+        clickCount--;
+        if (clickCount < 1) {
+          clearInterval(timer);
+          timer = undefined;
+          btn.innerHTML = "Run";
+        } else {
+          startBar();
+        }
+      }, 3000);
+    }
+
+    function startBar() {
+      bar.classList.remove("start");
+      setTimeout(() => {
+        bar.classList.add("start");
+      }, 100);
+    }
   }
 }
