@@ -26,18 +26,18 @@ function ColorSpotter(colorSpotter, size, scoreElement) {
   const grid = document.querySelector(colorSpotter);
   const scoreElem = document.querySelector(scoreElement);
   var score = 0;
-  const defSize = size;
+  var currGridSize = size;
   var isShaking = false;
   var traitor = -1;
-  function formGrid(size, currScore) {
+  function formGrid(currGridSize, currScore) {
     destroyGrid();
     var cellIndex = 0;
-    traitor = randomIndex(size);
+    traitor = randomIndex(currGridSize);
     var colors = getRandomColors();
-    for (let i = 0; i < size; i++) {
+    for (let i = 0; i < currGridSize; i++) {
       const row = document.createElement("div");
       row.classList.add("row");
-      for (let j = 0; j < size; j++) {
+      for (let j = 0; j < currGridSize; j++) {
         const cell = document.createElement("div");
         cell.classList.add("cell");
         cell.setAttribute("data-index", String(cellIndex));
@@ -60,14 +60,15 @@ function ColorSpotter(colorSpotter, size, scoreElement) {
     let clickedIndex = e.target.dataset.index;
     if (traitor === Number(clickedIndex)) {
       score++;
-      formGrid(++size, score);
+      formGrid(++currGridSize, score);
     } else {
       grid.className = "shake";
       isShaking = true;
       await delay(800);
       isShaking = false;
       score = 0;
-      formGrid(defSize, score);
+      currGridSize = size;
+      formGrid(currGridSize, score);
     }
   }
 
@@ -87,5 +88,5 @@ function ColorSpotter(colorSpotter, size, scoreElement) {
     });
   }
 
-  formGrid(size, 0);
+  formGrid(currGridSize, 0);
 }
