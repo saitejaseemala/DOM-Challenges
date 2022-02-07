@@ -27,6 +27,7 @@ function ColorSpotter(colorSpotter, size, scoreElement) {
   const scoreElem = document.querySelector(scoreElement);
   var score = 0;
   const defSize = size;
+  var isShaking = false;
   var traitor = -1;
   function formGrid(size, currScore) {
     destroyGrid();
@@ -65,7 +66,6 @@ function ColorSpotter(colorSpotter, size, scoreElement) {
       isShaking = true;
       await delay(800);
       isShaking = false;
-      grid.classList.remove("shake");
       score = 0;
       formGrid(defSize, score);
     }
@@ -80,6 +80,7 @@ function ColorSpotter(colorSpotter, size, scoreElement) {
   }
 
   function destroyGrid() {
+    grid.classList.remove("shake");
     const des = document.querySelectorAll(".row");
     des.forEach((d) => {
       d.remove();
