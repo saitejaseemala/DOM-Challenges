@@ -55,13 +55,16 @@ function ColorSpotter(colorSpotter, size, scoreElement) {
   }
 
   async function onClickHandler(e) {
+    if (isShaking) return;
     let clickedIndex = e.target.dataset.index;
     if (traitor === Number(clickedIndex)) {
       score++;
       formGrid(++size, score);
     } else {
       grid.className = "shake";
+      isShaking = true;
       await delay(800);
+      isShaking = false;
       grid.classList.remove("shake");
       score = 0;
       formGrid(defSize, score);
