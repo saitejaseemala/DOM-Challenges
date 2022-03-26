@@ -2,7 +2,7 @@
 
 Create star rating utility using HTML, CSS and JavaScript
 
-**Solution Live URL:** https://nervous-thompson-4b4892.netlify.app/
+**Solution Live URL:** https://rococo-florentine-77162c.netlify.app/
 
 **Playground:** [JSFiddle](https://jsfiddle.net/devkode/wxoykdgm/)
 
